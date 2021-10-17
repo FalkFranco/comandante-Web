@@ -3,9 +3,12 @@
     --fuenteSecundaria: 'Roboto', sans-serif;
     --fuenteTerciaria: 'Roboto Condensed', sans-serif;
     --marronClaro: #e5a75c;
+    --marronOscuro: #bb894c;
     --blanco: #fff;
     --negro: #000;
     --grisClaro: #e1e1e1;
+
+    --separacion: 5rem;
 }
 
 /**  **/
@@ -47,7 +50,7 @@ h2 {
     }
 }
 h3 {
-    font-size: 2.3rem;
+    font-size: 2rem;
 }
 
 a {
@@ -60,11 +63,20 @@ img {
     display: block;
 }
 
+.c-bk{
+    background-color: black;
+    height: 20rem;
+    margin: 0;
+}
+
+.margin-8{
+    margin: 8rem 0;
+}
 /**Utilidades **/
 
 .contenedor {
     max-width: 120rem;
-    margin: 0 auto;
+    margin: 8rem auto;
     width: 90%;
 }
 
@@ -197,24 +209,33 @@ img {
     text-align: right;
     padding: 8rem 5rem 3rem 0;
 }
-
-@media (min-width: 768px) {
-    .titulo-hero {
-        font-size: 5rem;
-        padding: 18rem 5rem 3rem 0;
-    }
-}
-
 .contenedor-boton {
     display: flex;
     justify-content: center;
 }
 
+@media (min-width: 768px) {
+    .titulo-hero {
+        font-size: 5rem;
+        padding: 18rem 5rem 3rem 0;
+        line-height: 7.5rem;
+    }
+    .contenedor-boton{
+        justify-content: right;
+        margin-right: 5rem;
+    }
+}
+@media (min-width: 1700px) { 
+    .contenedor-boton{
+        justify-content: center;
+    }
+}
+
+
 /** menu **/
 
 .Carousel {
     width: 100%;
-    margin: 5rem 0;
 }
 
 
@@ -313,10 +334,6 @@ img {
 
 /**Seccion imagenes **/
 
-.seccion-imagenes {
-    margin-top: 5rem;
-}
-
 .grid-imagenes {
     display: grid;
     grid-auto-flow: row dense;
@@ -325,10 +342,12 @@ img {
 }
 
 
+
 .contenido-imagenes img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 1rem;
 }
 
 .contenido-imagenes:nth-child(3) {
@@ -371,7 +390,163 @@ img {
     .contenido-imagenes:nth-child(6) {
         grid-column-start: 2;
         grid-column-end: 4;
+    }   
+}
+
+/** Form Reserva **/
+
+.container {
+    max-width: 1170px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1.5em;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+.logo {
+    text-align: center;
+    font-size: 3em;
+}
+
+.logo span {
+    color: #B70E21;
+}
+
+.contact-wrapper {
+    box-shadow: 0 0 20px 0 rgba(255, 255, 255, .3);
+}
+
+.contact-wrapper > * {
+    padding: 1em;
+}
+
+
+
+.contact-form form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.contact-form form label {
+    display: block;
+}
+
+.contact-form form p {
+    margin: 0;
+    padding: 1em;
+}
+
+.contact-form form .block {
+    grid-column: 1 / 3;
+}
+
+.contact-form form button,
+.contact-form form input,
+.contact-form form textarea {
+    width: 100%;
+    padding: .7em;
+    border: none;
+    background: none;
+    outline: 0;
+    color: var(--negro);
+    border-bottom: 1px solid #d63031;
+}
+
+.contact-form form button {
+    background: var(--marronClaro);
+    border: 0;
+    text-transform: uppercase;
+    padding: 1em;
+}
+
+.contact-form form button:hover,
+.contact-form form button:focus {
+    background: var(--marronOscuro);
+    color: #fff;
+    transition: background-color 1s ease-out;
+    outline: 0;
+}
+
+/* CONTACT INFO */
+
+
+
+.contact-info {
+    background: #000;
+    border-radius: 1rem;
+}
+.contact-info h4{
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+.contact-info h4, .contact-info ul, .contact-info p {
+    text-align: center;
+    margin: 0 0 1rem 0;
+    color: var(--marronClaro);
+}
+
+/* LARGE SIZE */
+@media(min-width: 768px) {
+    .contenedor-form{
+        padding: 0 4rem;
     }
     
+    .contact-wrapper {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+    }
+    .contact-wrapper > * {
+        padding: 2em;
+    }
+    .contact-info h4,
+    .contact-info ul,
+    .contact-info p {
+        text-align: left;
+    }
+}
+
+/** Nosotros **/
+
+
+/** Footer **/
+
+.flex-footer{
+    background-color: #161e2c;
+    padding: 4rem 2rem 2rem 2rem;
+    color: var(--blanco);
     
+}
+
+.nav-footer{
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #2b3340;
+    padding-bottom: 1.6rem;
+    margin-bottom: 1.6rem;
+}
+
+.nav-footer a{
+    color:#bec0c2;
+}
+
+@media (min-width: 768px) { 
+    .contenedor-footer{
+        padding: 0;
+    }
+    .flex-footer{
+        display: flex;
+        justify-content: space-around;
+        
+    }
+    .nav-footer{
+        border: none;
+    }
+    .contenido-footer h3{
+        padding: 1rem 0;
+    }
 }
